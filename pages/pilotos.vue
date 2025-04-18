@@ -85,139 +85,130 @@ const pilotos = [
 
 <style scoped>
 .contenedor {
-  padding: 40px;
-  background-color: white;
-  color: black;
+  padding: 30px 20px;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  color: #e10600;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .grid-pilotos {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.posicion {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
-  font-weight: bold;
+.card {
+  display: flex;
+  align-items: center;
+  padding: 0px 30px; /* Alto de la tarjeta */
+  border-radius: 12px;
+  background-color: #111;
+  border-left: 8px solid #444;
+  position: relative;
+  min-height: 80px;
+  width: 480px; /* Ancho de la tarjeta */
 }
 
-.puntos {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  text-align: right;
+.card.mclaren {
+  border-left-color: #f77c00;
+  background: linear-gradient(to right, #1a1a1a, #f77c0010);
 }
 
-.numero-puntos {
-  font-size: 20px;
-  font-weight: bold;
+.card.redbull {
+  border-left-color: #1e2a78;
+  background: linear-gradient(to right, #1a1a1a, #1e2a7810);
 }
 
-.pts {
-  font-size: 12px;
-  font-weight: bold;
-  display: block;
+.imagen {
+  flex: 0 0 65px;
+}
+
+.imagen-piloto {
+  width: 65px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
 .contenido {
-  margin-top: 40px;
-  text-align: center;
+  flex: 1;
+  padding-left: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.datos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
+.nombre {
+  font-size: 13px;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-bottom: -50px;
 }
 
 .nombre-chico {
-  display: block;
-  font-size: 12px;
-  color: gray;
+  color: #aaa;
+  font-size: 11px;
 }
 
 .nombre-grande {
-  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bandera {
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.equipo {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+.puntos {
+  text-align: right;
+  font-size: 14px;
+}
+
+.numero-puntos {
   font-size: 18px;
   font-weight: bold;
 }
 
-.equipo {
-  margin-top: 4px;
-  font-size: 13px;
-  color: #666;
+.pts {
+  font-size: 11px;
+  color: #999;
 }
 
-.imagen {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.imagen-piloto {
-  width: 100px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 0 auto;
-  display: block;
-}
-
-.imagen-placeholder {
-  width: 100px;
-  height: 130px;
-  margin: 0 auto;
-  background-color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
+.posicion {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 16px;
   font-weight: bold;
-  color: #aaa;
+  color: #e10600;
 }
 
 .numero-grande {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
-  color: #f77c00;
-  margin-top: 10px;
-}
-.card {
-  background-color: white; /* Fondo negro */
-  color: black;
-  border-radius: 12px;
-  width: 280px;
-  padding: 20px;
-  position: relative;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
-  border: 2px solid #333; /* Default border, override with team class */
+  color: rgba(255, 255, 255, 0.04);
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
 }
 
-/* McLaren */
-.card.mclaren {
-  border-color: #f77c00;
-}
-
-.card.mclaren .numero-grande {
-  color: #f77c00;
-}
-
-/* Red Bull */
-.card.redbull {
-  border-color: #1e2a78;
-}
-
-.card.redbull .numero-grande {
-  color: #1e2a78;
-}
 </style>
