@@ -269,11 +269,11 @@ const pilotos = [
     <h1>Pilotos 2025</h1>
     <div class="grid-pilotos">
       <div
-  class="card"
-  :class="piloto.equipo"
-  v-for="piloto in pilotos"
-  :key="piloto.id"
->
+        class="card"
+        :class="piloto.equipo"
+        v-for="piloto in pilotos"
+        :key="piloto.id"
+      >
         <div class="imagen">
           <img
             v-if="piloto.imagen"
@@ -290,11 +290,10 @@ const pilotos = [
               <span class="nombre-chico">{{ piloto.nombre.toUpperCase() }}</span>
               <span class="nombre-grande">{{ piloto.apellido.toUpperCase() }}</span>
             </div>
-        
           </div>
           <div class="equipo">
-        <img :src="piloto.logo" alt="Logo equipo" class="logo-equipo" />
-      </div>
+            <img :src="piloto.logo" alt="Logo equipo" class="logo-equipo" />
+          </div>
         </div>
 
         <div class="numero-grande">{{ piloto.numero }}</div>
@@ -302,6 +301,7 @@ const pilotos = [
     </div>
   </div>
 </template>
+
 
 <style scoped>
 @font-face {
@@ -313,7 +313,7 @@ const pilotos = [
 
 .contenedor {
   padding: 30px 20px;
-  background-color: #000;
+  background: linear-gradient(to bottom, #141414, #000000);
   color: white;
   min-height: 100vh;
   font-family: 'F1', sans-serif;
@@ -330,12 +330,11 @@ h1 {
 }
 
 .grid-pilotos {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  justify-items: center;
 }
-
 .card {
   display: flex;
   align-items: center;
@@ -346,8 +345,13 @@ h1 {
   position: relative;
   min-height: 90px;
   width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
 .card.mclaren {
   border-left-color: #f77c00;
   background: linear-gradient(to right, #1a1a1a, #f77c0010);
@@ -471,6 +475,11 @@ h1 {
 @media (max-width: 400px) {
   .card {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .grid-pilotos {
+    grid-template-columns: 1fr;
   }
 }
 </style>
