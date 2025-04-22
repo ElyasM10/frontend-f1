@@ -265,6 +265,54 @@ const pilotos = [
 </script>
 
 <template>
+
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark f1-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="/assets/f1-75.png" alt="Logo F1" width="200" height="24" marginLeft="20" class="d-inline-block me-2" />
+   
+        <!-- Imagen de la próxima carrera -->
+        <div class="ms-3">
+        <img src="/assets/fia.png" alt="GP Miami" class="fia-img" />
+      </div>
+      <!--
+      <span>Fórmula 1</span>
+    -->
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Equipos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pilotos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Calendario</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+   
+
+
+</nav>
+
   <div class="contenedor">
     <h1>Pilotos 2025</h1>
     <div class="grid-pilotos">
@@ -300,6 +348,20 @@ const pilotos = [
       </div>
     </div>
   </div>
+
+  <footer class="footer text-white text-center py-4">
+  <div class="container">
+    <p class="mb-0">© 2025 Fórmula 1 - Todos los derechos reservados</p>
+    <p class="mb-0">Elias Maldonado</p>
+    <div class="mt-3">
+      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+
 </template>
 
 
@@ -311,9 +373,31 @@ const pilotos = [
   font-style: normal;
 }
 
+.f1-navbar {
+  background-color: #c01111 !important; /* rojo oscuro tipo Ferrari */
+  border-bottom: 3px solid #c01111;     /* rojo vibrante como el de F1 */
+  font-family: 'F1', sans-serif;   
+  height: 100px;
+}
+
+.f1-navbar .nav-link {
+  color: #ddd !important;
+  transition: color 0.3s ease;
+}
+
+.f1-navbar .nav-link:hover,
+.f1-navbar .nav-link.active {
+  color: #ffffff !important;
+  text-shadow: 0 0 5px #e10600;
+}
+.fia-img{
+  width: 90px;
+  margin-left: 650px;
+}
+
 .contenedor {
   padding: 30px 20px;
-  background: linear-gradient(to bottom, #141414, #000000);
+  background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
   color: white;
   min-height: 100vh;
   font-family: 'F1', sans-serif;
@@ -411,6 +495,7 @@ h1 {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  margin-right: 280px;
 }
 
 .contenido {
@@ -426,9 +511,9 @@ h1 {
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  margin-left: 30px;
   margin-bottom: -50px;
-  margin-top: 10px;
+  margin-top: -50px;
 }
 
 .nombre-chico {
@@ -445,6 +530,7 @@ h1 {
   font-family: 'F1', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #aaa;
 }
 
 
@@ -470,7 +556,22 @@ h1 {
   height: auto;
   object-fit: contain;
   opacity: 0.8;
+  margin-top: -60px;
 }
+
+.footer {
+  background-color: #c01111;
+  color: #ffffff; 
+}
+
+.footer a {
+  color: #ffffff; 
+}
+
+.footer a:hover {
+  color: #f1f1f1; 
+}
+
 
 @media (max-width: 400px) {
   .card {
@@ -483,3 +584,18 @@ h1 {
   }
 }
 </style>
+<style>
+html, body, #app {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  background: linear-gradient(to bottom, #141414, #000000);
+  font-family: 'F1', sans-serif !important;
+  color: white;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+</style>
+
