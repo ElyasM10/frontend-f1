@@ -51,8 +51,8 @@ import oscarImg from '~/assets/Mclaren/oscarPiastri.png'
       </div>
       <div class="piloto-info">
         <h5 class="card-title">Oscar Piastri <span style="color: #ccc;">#81</span></h5>
-        <p class="card-text"><strong>Nacionalidad:</strong> 🇦🇺 Australia</p>
-        <p class="card-text"><strong>Edad:</strong> 23 años</p>
+        <p class="card-text"><strong>Nacionalidad:</strong> Australiano</p>
+        <p class="card-text"><strong>Fecha de nacimiento:</strong> 06/04/2001</p>
         <p class="card-text"><strong>Descripción:</strong> Piloto de McLaren desde 2023. Campeón de F2 en 2021.</p>
       </div>
     </div>
