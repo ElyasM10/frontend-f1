@@ -69,8 +69,20 @@ const logosEquipos = {
   'Racing Bulls': rbLogo,
   'Haas': haasLogo,
   'Williams': wiliamsLogo,
-  'Sauber ': sauberLogo
+  'Sauber': sauberLogo
 }
+const ordenEquipos = [
+  'McLaren',
+  'Ferrari',
+  'Red Bull Racing',
+  'Mercedes',
+  'Aston Martin',
+  'Alpine',
+  'Haas',
+  'Racing Bulls', // RB (Red Bull Racing)
+  'Williams',
+  'Sauber'
+]
 
 const pilotos = ref([])
 
@@ -81,18 +93,30 @@ onMounted(async () => {
 
     const data = await response.json()
 
-    pilotos.value = data.map(piloto => {
+    pilotos.value = data
+  .map(piloto => {
     const nombreCompleto = `${piloto.nombre} ${piloto.apellido}`
     return {
-        ...piloto,
-        imagen: imagenesPilotos[nombreCompleto] || null,
-        logoEquipo: logosEquipos[piloto.equipo] || null
+      ...piloto,
+      imagen: imagenesPilotos[nombreCompleto] || null,
+      logoEquipo: logosEquipos[piloto.equipo] || null
     }
-    })
+  })
+  .sort((a, b) => {
+    return ordenEquipos.indexOf(a.equipo) - ordenEquipos.indexOf(b.equipo)
+  })
   } catch (error) {
     console.error('Error al obtener pilotos:', error)
   }
 })
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const irADetalles = (id) => {
+  router.push(`/detallesPilotos/${id}`) 
+}
 </script>
 
 <template>
@@ -141,40 +165,40 @@ onMounted(async () => {
 <div class="contenedor">
     <h1>Pilotos 2025</h1>
     <div class="grid-pilotos">
-        <div
-            class="card"
-            :class="piloto.equipo.toLowerCase()"
-            v-for="piloto in pilotos"
-            :key="piloto.id"
-        >
-            <div class="imagen">
-                <img
-                    v-if="piloto.imagen"
-                    :src="piloto.imagen"
-                    alt="Foto del piloto"
-                    class="imagen-piloto"
-                />
-                <div v-else class="imagen-placeholder">IMG</div>
-            </div>
-
-            <div class="contenido">
-                <div class="datos">
-                    <div class="nombre">
-                        <span class="nombre-chico">{{ piloto.nombre.toUpperCase() }}</span>
-                        <span class="nombre-grande">{{ piloto.apellido.toUpperCase() }}</span>
-                    </div>
-                </div>
-            
-            </div>
-
-            <div class="equipo">
-            <img v-if="piloto.logoEquipo" :src="piloto.logoEquipo" alt="Logo equipo" class="logo-equipo" />
-            </div>
-
-            <div class="numero-grande">{{ piloto.numero }}</div>
+      <div
+        class="card"
+        :class="piloto.equipo.toLowerCase()"
+        v-for="piloto in pilotos"
+        :key="piloto.id"
+        @click="irADetalles(piloto.id)"
+      >
+        <div class="imagen">
+          <img
+            v-if="piloto.imagen"
+            :src="piloto.imagen"
+            alt="Foto del piloto"
+            class="imagen-piloto"
+          />
+          <div v-else class="imagen-placeholder">IMG</div>
         </div>
+
+        <div class="contenido">
+          <div class="datos">
+            <div class="nombre">
+              <span class="nombre-chico">{{ piloto.nombre.toUpperCase() }}</span>
+              <span class="nombre-grande">{{ piloto.apellido.toUpperCase() }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="equipo">
+          <img v-if="piloto.logoEquipo" :src="piloto.logoEquipo" alt="Logo equipo" class="logo-equipo" />
+        </div>
+
+        <div class="numero-grande">{{ piloto.numero }}</div>
+      </div>
     </div>
-</div>
+  </div>
 
 <footer class="footer text-white text-center py-4">
     <div class="container">
@@ -372,6 +396,7 @@ transform: translateY(-50%);
 .footer {
   background-color: #c01111;
   color: #ffffff; 
+  font-family: 'F1', sans-serif;   
 }
 
 .footer a {
