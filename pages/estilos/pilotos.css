@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'F1';
+    src: url('@/assets/Fonts/Formula1-Wide.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    .contenedor {
+    padding: 30px 20px;
+    background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+    color: white;
+    min-height: 100vh;
+    font-family: 'F1', sans-serif;
+    }
+    
+    h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e10600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    }
+    
+    .grid-pilotos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-items: center;
+    }
+    
+    .card {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background-color: #111;
+    border-left: 6px solid #444;
+    position: relative;
+    min-height: 90px;
+    width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    }
+    
+    .card.mclaren {
+    border-left-color: #f77c00;
+    background: linear-gradient(to right, #1a1a1a, #f77c0010);
+    }
+    
+    .card.redbull {
+    border-left-color: #1c297e;
+    background: linear-gradient(to right, #1a1a1a, #1e2a7810);
+    }
+    
+    .card.ferrari {
+    border-left-color: #e10600;
+    background: linear-gradient(to right, #1a1a1a, #e1060010);
+    }
+    
+    .card.mercedes {
+    border-left-color: #00d2be;
+    background: linear-gradient(to right, #1a1a1a, #00d2be10);
+    }
+    
+    .card.astonmartin {
+    border-left-color: #00665e;
+    background: linear-gradient(to right, #1a1a1a, #00665e10);
+    }
+    
+    .card.alpine {
+    border-left-color: #2293d1;
+    background: linear-gradient(to right, #1a1a1a, #2293d110);
+    }
+    
+    .card.rb {
+    border-left-color: #5e1cb7;
+    background: linear-gradient(to right, #1a1a1a, #5e1cb710);
+    }
+    
+    .card.haas {
+    border-left-color: #b6babd;
+    background: linear-gradient(to right, #1a1a1a, #b6babd10);
+    }
+    
+    .card.williams {
+    border-left-color: #005aff;
+    background: linear-gradient(to right, #1a1a1a, #005aff10);
+    }
+    
+    .card.sauber {
+    border-left-color: #52e252;
+    background: linear-gradient(to right, #1a1a1a, #52e25210);
+    }
+    
+    .imagen {
+    flex: 0 0 70px;
+    }
+    
+    .imagen-piloto {
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    margin-right: 300px;
+    }
+    
+    .contenido {
+    flex: 1;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
+    
+    .nombre {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin-left: -10px;
+    margin-bottom: -50px;
+    margin-top: -40px;
+    }
+    
+    .nombre-chico {
+    color: #aaa;
+    font-size: 10px;
+    font-family: 'F1', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    }
+    
+    .nombre-grande {
+    font-size: 14px;
+    font-family: 'F1', sans-serif;
+    color: #ffffff;
+    }
+    
+    .numero-grande {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 80%;
+    margin-left: 300px;
+    transform: translateY(-50%);
+    }
+    
+    .footer {
+      background-color: #c01111;
+      color: #ffffff; 
+      font-family: 'F1', sans-serif;   
+    }
+    
+    .footer a {
+      color: #ffffff; 
+    }
+    
+    .footer a:hover {
+      color: #f1f1f1; 
+    }
+    .logo-equipo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-top: -150px; /* Mover hacia arriba */
+      margin-bottom: 10px;
+      margin-left:310px;
+    }
+    
+    
