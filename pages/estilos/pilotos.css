@@ -10,6 +10,7 @@
     color: white;
     min-height: 100vh;
     font-family: 'F1', sans-serif;
+    margin-top: -30px;
     }
     
     h1 {
@@ -174,5 +175,47 @@
       margin-bottom: 10px;
       margin-left:310px;
     }
+    .scroll-equipos {
+      overflow-x: hidden;
+      background: linear-gradient(to bottom, #444, #2a2a2a);
+      padding: 12px 0;
+      margin-bottom: 24px;
+    }
     
+    .logos {
+      display: flex;
+      gap: 32px;
+      animation: scroll-logos 30s linear infinite;
+      width: max-content;
+    }
     
+    .logo-wrapper {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo-equipo-scroll {
+      height: 60px;
+      max-width: 100px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-equipo-scroll:hover {
+      transform: scale(1.1);
+    }
+    :global(html, body) {
+      margin: 0;
+      padding: 0;
+    }
+    
+    @keyframes scroll-logos {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }

@@ -3,16 +3,30 @@ import '~/pages/estilos/pilotos.css'
 import { usePilotos } from '~/componentes/usePilotos'
 import Navbar from '~/componentes/NavBar.vue'
 import Footer from '~/componentes/Footer.vue'
+import { computed } from 'vue'
 
-const { pilotos, irADetalles } = usePilotos()
+const { pilotos, irADetalles,equiposConLogo } = usePilotos()
+
 </script>
 
 <template>
-<!-- Navbar -->
-  <Navbar/>
+  <Navbar />
 
-<div class="contenedor">
-    <h1>Pilotos 2025</h1>
+  <!-- Scroll logos equipos -->
+  <div class="scroll-equipos">
+    <div class="logos">
+      <div v-for="[equipo, logo] in equiposConLogo" :key="equipo" class="logo-wrapper">
+        <img :src="logo" :alt="equipo" class="logo-equipo-scroll" />
+      </div>
+      <!-- Duplicado para loop animado -->
+      <div v-for="[equipo, logo] in equiposConLogo" :key="equipo + '-duplicado'" class="logo-wrapper">
+        <img :src="logo" :alt="equipo" class="logo-equipo-scroll" />
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor">
+  
     <div class="grid-pilotos">
       <div
         class="card"
@@ -48,6 +62,6 @@ const { pilotos, irADetalles } = usePilotos()
       </div>
     </div>
   </div>
-  <Footer/>
 
+  <Footer />
 </template>

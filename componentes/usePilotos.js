@@ -91,6 +91,17 @@ export function usePilotos() {
     router.push(`/detallesPilotos/${id}`)
   }
 
+// Obtener logos únicos por equipo
+const equiposConLogo = computed(() => {
+  const equiposMap = new Map()
+  for (const piloto of pilotos.value) {
+    if (!equiposMap.has(piloto.equipo) && piloto.logoEquipo) {
+      equiposMap.set(piloto.equipo, piloto.logoEquipo)
+    }
+  }
+  return Array.from(equiposMap.entries())
+})
+
   onMounted(async () => {
     try {
       const response = await fetch('http://localhost:8080/pilotos')
@@ -128,6 +139,7 @@ export function usePilotos() {
   return {
     pilotos,
     irADetalles,
+    equiposConLogo,
     isLoading
   }
 }
