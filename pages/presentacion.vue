@@ -188,19 +188,19 @@ onUnmounted(() => {
         #020420 100%   /* verde brillante solo en el 20% final */
 );
     min-height: 100vh;
-    display: flex;
+     display: block;
     justify-content: center;
     align-items: flex-start; /* Cambiado de center a flex-start */
     padding-top: 50px;        /* Espacio desde arriba */
     overflow-x: hidden;
 }
-
-        .presentation-container {
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
-        }
-
+.presentation-container {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 40px;
+    position: relative;
+      margin: 0 auto; 
+}
         .slide {
 background: linear-gradient(135deg, 
         #020420 0%, 
@@ -215,6 +215,7 @@ background: linear-gradient(135deg,
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .slide.active {
@@ -242,7 +243,7 @@ background: linear-gradient(135deg,
 
         .breadcrumb {
             color: #00ff88;
-            font-size: 18px;
+            font-size: 22px;
             margin-bottom: 30px;
             font-weight: 500;
             z-index: 2;
@@ -261,7 +262,7 @@ background: linear-gradient(135deg,
 
         .slide h2 {
             color: white;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 600;
             margin-bottom: 30px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -271,7 +272,7 @@ background: linear-gradient(135deg,
 
         .slide p {
             color: #b8c6db;
-            font-size: 1.5rem;
+            font-size: 2rem;
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto 40px;
@@ -281,7 +282,7 @@ background: linear-gradient(135deg,
 
         .slide ul {
             color: #b8c6db;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             line-height: 1.8;
             text-align: left;
             max-width: 600px;
@@ -300,13 +301,13 @@ background: linear-gradient(135deg,
             content: '▶';
             color: #00ff88;
             position: absolute;
-            left: 0;
+             left: -10px; 
         }
 
         .logo {
             position: absolute;
             bottom: 40px;
-            left: 50%;
+            left: 80%;
             transform: translateX(-50%);
             z-index: 2;
         }
