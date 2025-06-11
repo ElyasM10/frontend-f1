@@ -2,12 +2,19 @@
 import '~/pages/estilos/presentacion.css'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+import sebastienChoppin from '~/assets/presentacion/SebastienChopin.jpg'
+import nuxtLogo from '~/assets/presentacion/nuxtlogo.png'
+import empresas from '~/assets/presentacion/empresas.png'
+import gitNuxt from '~/assets/presentacion/gitNuxt.png'
+import Next from '~/assets/presentacion/next.png'
 // Lista de slides
 const slides = ref([
-  {
+{
     breadcrumb: 'Presentación > Inicio',
     title: 'Introducción a Nuxt',
-    content: `<p>Por Elias Maldonado.</p>`,
+    content: `
+      <p>Por Elias Maldonado.</p>
+    `,
     logo: true
   },
   {
@@ -17,7 +24,34 @@ const slides = ref([
       <ul>
         <li>Nuxt es un framework de desarrollo web moderno basado en Vue.js que proporciona una estructura clara, modular y productiva para crear aplicaciones del lado del cliente (SPA), del lado del servidor (SSR) o generadas estáticamente (SSG). </li>
         <li>Nuxt fue creado por Sébastien Chopin y su hermano. Lo lanzaron por primera vez en octubre de 2016.</li>     
-      </ul>`
+      </ul>
+     <img 
+    src="${sebastienChoppin}" 
+    alt="Sébastien Chopin" 
+    style="
+     position: absolute;
+    top: 50%;
+      right: 120px;
+    transform: translateY(-50%);
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    " 
+  />
+  <img 
+      src="${nuxtLogo}" 
+      alt="Logo de Nuxt" 
+      style="
+        position: absolute;
+        top: 50%;
+        left: 120px;
+        transform: translateY(-50%);
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      " 
+    />
+    `
   },
   {
     breadcrumb: 'Introducción',
@@ -43,7 +77,34 @@ const slides = ref([
       <ul>
          <li>Sí, Nuxt es ampliamente utilizada y tiene una comunidad muy activa. Esto se refleja en su gran número de estrellas en GitHub (más de 50k), su uso en empresas conocidas y su presencia en conferencias y meetups especializados. 
                 </li>
-      </ul>`
+      </ul>
+          <img 
+  src="${empresas}" 
+  alt="Empresas que usan Nuxt" 
+  style="
+    position: absolute;
+       bottom: 60px;            
+    left: 50%;              
+    transform: translateX(-50%);
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  " 
+/>
+  <img 
+      src="${gitNuxt}" 
+      alt="git de Nuxt" 
+      style="
+        position: absolute;
+        top: 50%;
+        left: 120px;
+        transform: translateY(-50%);
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      " 
+    />
+      `
   },
   {
     breadcrumb: 'Popularidad',
@@ -52,7 +113,21 @@ const slides = ref([
       <ul>
        <li>Next.js es el competidor más directo, pero está basado en React. Ambas herramientas siguen un enfoque similar en cuanto a renderizado híbrido, rutas automáticas y generación estática. A nivel global, Next.js tiene mayor adopción debido a la popularidad de React, pero en la comunidad Vue, Nuxt es claramente la opción preferida. 
                     </li>
-      </ul>`
+      </ul>
+       <img 
+      src="${Next}" 
+      alt="Nextjs" 
+      style="
+        position: absolute;
+        top: 50%;
+        left: 120px;
+        transform: translateY(-50%);
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      " 
+    />
+      `
   },
   {
     breadcrumb: 'Instalación',
@@ -69,12 +144,12 @@ const slides = ref([
     content: `
       <ul>
         <li>├── app.vue</li>
+        <li>├── nuxt.config.ts</li>
         <li>├── pages/</li>
         <li>├── components/</li>
         <li>├── layouts/</li>
-        <li>├── plugins/</li>
         <li>├── composables/</li>
-        <li>├── public/</li>
+        <li>├── plugins/</li>
         <li>├── assets/</li>
       </ul>`
   },
