@@ -7,6 +7,8 @@ import nuxtLogo from '~/assets/presentacion/nuxtlogo.png'
 import empresas from '~/assets/presentacion/empresas.png'
 import gitNuxt from '~/assets/presentacion/gitNuxt.png'
 import Next from '~/assets/presentacion/next.png'
+import estructuraCodigo from '~/assets/presentacion/estructuraCodigo.png'
+import navegacion from '~/assets/presentacion/navegacion.png'
 // Lista de slides
 const slides = ref([
 {
@@ -143,31 +145,74 @@ const slides = ref([
     title: 'Estructura del Proyecto',
     content: `
       <ul>
+        <li>├── package.json/</li>
         <li>├── app.vue</li>
         <li>├── nuxt.config.ts</li>
         <li>├── pages/</li>
         <li>├── components/</li>
         <li>├── layouts/</li>
-        <li>├── composables/</li>
-        <li>├── plugins/</li>
         <li>├── assets/</li>
       </ul>`
   },
   {
-    breadcrumb: 'Estructura',
-    title: 'Estructura del Código',
-    content: `<ul><li>Ejemplo comparativo con Next.js</li></ul>`
-  },
-  {
-    breadcrumb: 'Estructura',
-    title: 'Navegación',
-    content: `<ul><li>Explicación del sistema de rutas automático</li></ul>`
-  },
+  content: `     
+    <p style="
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+    ">
+      Estructura del código
+    </p>
+    <img 
+      src="${estructuraCodigo}" 
+      alt="estcodigo" 
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1900px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      " 
+    />
+  `
+},
+{
+  content: `     
+    <p style="
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+    ">
+      Navegacion
+    </p>
+    <img 
+      src="${navegacion}" 
+      alt="navegacion" 
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 2500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      " 
+    />
+  `
+},
   {
     breadcrumb: 'Demostración',
     title: 'Demo Práctica',
-    content: `<ul><li>Mostrar una demo en vivo del proyecto</li>
-      </ul>`
   },
   {
     breadcrumb: 'Aprendizaje',
@@ -175,7 +220,7 @@ const slides = ref([
     content: `<ul>
         <li>
                             Nuxt tiene una curva de aprendizaje amigable, especialmente para quienes ya conocen Vue. Su estructura de carpetas clara, el sistema de rutas basado en archivos y el uso de script setup hacen que empezar sea rápido y sencillo. 
-                            Aunque se debe tener un conocimiento previo  de HTML JavaScript para CSS sino puede llevar un poco mas de tiempo el adaptarse al framework.
+                            Aunque se debe tener un conocimiento previo  de HTML, JavaScript y CSS sino puede llevar un poco mas de tiempo el adaptarse al framework.
                         </li>
       </ul>`
   },
@@ -184,14 +229,13 @@ const slides = ref([
     title: '¿Interesa incorporar en el futuro?',
     content: `<ul>
      <li>
-                            Definitivamente sí. Nuxt representa una solución moderna y completa para muchos tipos de proyectos, desde landing pages estáticas hasta aplicaciones web complejas con backend incluido. Me interesa incorporarla en futuros desarrollos, especialmente en aquellos que necesiten buena performance, posicionamiento en buscadores (SEO), o un frontend escalable con un ecosistema robusto. También es ideal para proyectos personales 
+                            Nuxt representa una solución moderna y completa para muchos tipos de proyectos, desde landing pages estáticas hasta aplicaciones web complejas con backend incluido. Si me interesa incorporarla en futuros desarrollos personales.
                         </li>
       </ul>`
   },
   {
-    breadcrumb: 'Conclusión > Siguiente Paso',
-    title: '¡Listo para comenzar!',
-    content: `<p>Con Nuxt puedes crear apps modernas y escalables.</p>`,
+    breadcrumb: 'Eso es todo amigos!',
+    title: '¡Gracias!',
     logo: true
   }
 ])
