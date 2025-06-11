@@ -1,4 +1,5 @@
 <script setup>
+import '~/pages/estilos/presentacion.css'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // Lista de slides
@@ -14,8 +15,8 @@ const slides = ref([
     title: '¿Qué es?',
     content: `
       <ul>
-        <li>Nuxt es un framework de desarrollo web moderno basado en Vue.js...</li>
-        <li>Fue creado por Sébastien y Alexandre Chopin en 2016.</li>
+        <li>Nuxt es un framework de desarrollo web moderno basado en Vue.js que proporciona una estructura clara, modular y productiva para crear aplicaciones del lado del cliente (SPA), del lado del servidor (SSR) o generadas estáticamente (SSG). </li>
+        <li>Nuxt fue creado por Sébastien Chopin y su hermano. Lo lanzaron por primera vez en octubre de 2016.</li>     
       </ul>`
   },
   {
@@ -23,7 +24,7 @@ const slides = ref([
     title: '¿Para qué sirve?',
     content: `
       <ul>
-        <li>Sirve para construir aplicaciones web bien estructuradas...</li>
+         <li>Nuxt sirve para construir aplicaciones web robustas y bien estructuradas, sin necesidad de configurar todo desde cero. Permite renderizar contenido en el servidor para mejorar el SEO y el rendimiento, generar sitios estáticos listos para ser desplegados fácilmente, y crear APIs con su sistema de rutas del lado del servidor. </li>
       </ul>`
   },
   {
@@ -31,7 +32,8 @@ const slides = ref([
     title: '¿Qué problema intenta resolver?',
     content: `
       <ul>
-        <li>Nuxt simplifica el desarrollo eliminando configuraciones complejas...</li>
+        <li>Nuxt busca simplificar el desarrollo de aplicaciones modernas al eliminar configuraciones repetitivas y técnicas complejas como el renderizado del lado del servidor, manejo del SEO, generación estática y organización del proyecto. Al integrar todas estas funcionalidades desde el inicio, ayuda a los desarrolladores a enfocarse en la lógica y experiencia del usuario.
+                </li>
       </ul>`
   },
   {
@@ -39,7 +41,8 @@ const slides = ref([
     title: '¿Es utilizada popularmente?',
     content: `
       <ul>
-        <li>Sí, tiene más de 50k estrellas en GitHub y una comunidad activa.</li>
+         <li>Sí, Nuxt es ampliamente utilizada y tiene una comunidad muy activa. Esto se refleja en su gran número de estrellas en GitHub (más de 50k), su uso en empresas conocidas y su presencia en conferencias y meetups especializados. 
+                </li>
       </ul>`
   },
   {
@@ -47,7 +50,8 @@ const slides = ref([
     title: 'Herramientas Similares',
     content: `
       <ul>
-        <li>Next.js es el competidor más cercano basado en React.</li>
+       <li>Next.js es el competidor más directo, pero está basado en React. Ambas herramientas siguen un enfoque similar en cuanto a renderizado híbrido, rutas automáticas y generación estática. A nivel global, Next.js tiene mayor adopción debido a la popularidad de React, pero en la comunidad Vue, Nuxt es claramente la opción preferida. 
+                    </li>
       </ul>`
   },
   {
@@ -55,9 +59,9 @@ const slides = ref([
     title: 'Cómo Empezar',
     content: `
       <p>Instalación de Nuxt con npm:</p>
-      <div class="code">npm create nuxt@latest mi-proyecto</div>
-      <div class="code">cd mi-proyecto</div>
-      <div class="code">npm run dev</div>`
+       <div class="code-block">npm create nuxt@latest mi-proyecto</div>
+      <div class="code-block">cd mi-proyecto</div>
+      <div class="code-block">npm run dev</div>`
   },
   {
     breadcrumb: 'Estructura',
@@ -87,17 +91,27 @@ const slides = ref([
   {
     breadcrumb: 'Demostración',
     title: 'Demo Práctica',
-    content: `<ul><li>Mostrar una demo en vivo del proyecto</li></ul>`
+    content: `<ul><li>Mostrar una demo en vivo del proyecto</li>
+      </ul>`
   },
   {
     breadcrumb: 'Aprendizaje',
     title: '¿Es simple de aprender?',
-    content: `<ul><li>Curva de aprendizaje amigable si ya sabes Vue.</li></ul>`
+    content: `<ul>
+        <li>
+                            Nuxt tiene una curva de aprendizaje amigable, especialmente para quienes ya conocen Vue. Su estructura de carpetas clara, el sistema de rutas basado en archivos y el uso de script setup hacen que empezar sea rápido y sencillo. 
+                            Aunque se debe tener un conocimiento previo  de HTML JavaScript para CSS sino puede llevar un poco mas de tiempo el adaptarse al framework.
+                        </li>
+      </ul>`
   },
   {
     breadcrumb: 'Aprendizaje',
     title: '¿Interesa incorporar en el futuro?',
-    content: `<ul><li>Sí. Es útil para proyectos personales y profesionales.</li></ul>`
+    content: `<ul>
+     <li>
+                            Definitivamente sí. Nuxt representa una solución moderna y completa para muchos tipos de proyectos, desde landing pages estáticas hasta aplicaciones web complejas con backend incluido. Me interesa incorporarla en futuros desarrollos, especialmente en aquellos que necesiten buena performance, posicionamiento en buscadores (SEO), o un frontend escalable con un ecosistema robusto. También es ideal para proyectos personales 
+                        </li>
+      </ul>`
   },
   {
     breadcrumb: 'Conclusión > Siguiente Paso',
@@ -172,217 +186,3 @@ onUnmounted(() => {
     <button class="nav-btn" @click="nextSlide">Siguiente →</button>
   </div>
 </template>
-
-<style>
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-   body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, 
-    #00dc82 0%, 
-        #020420 50%,   /* azul oscuro ocupa hasta 80% */
-        #020420 100%   /* verde brillante solo en el 20% final */
-);
-    min-height: 100vh;
-     display: block;
-    justify-content: center;
-    align-items: flex-start; /* Cambiado de center a flex-start */
-    padding-top: 50px;        /* Espacio desde arriba */
-    overflow-x: hidden;
-}
-.presentation-container {
-    width: 100%;
-    max-width: 1600px;
-    padding: 0 40px;
-    position: relative;
-      margin: 0 auto; 
-}
-        .slide {
-background: linear-gradient(135deg, 
-        #020420 0%, 
-        #020420 30%,   /* azul oscuro ocupa hasta 80% */
-        #00dc82 100%   /* verde brillante solo en el 20% final */
-);
-            min-height: 80vh;
-            border-radius: 20px;
-            padding: 60px 40px;
-            text-align: center;
-            display: none;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .slide.active {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .slide::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.1; }
-        }
-
-        .breadcrumb {
-            color: #00ff88;
-            font-size: 22px;
-            margin-bottom: 30px;
-            font-weight: 500;
-            z-index: 2;
-            position: relative;
-        }
-
-        .slide h1 {
-            color: white;
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            position: relative;
-        }
-
-        .slide h2 {
-            color: white;
-            font-size: 4rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            position: relative;
-        }
-
-        .slide p {
-            color: #b8c6db;
-            font-size: 2rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .slide ul {
-            color: #b8c6db;
-            font-size: 1.8rem;
-            line-height: 1.8;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-            z-index: 2;
-            position: relative;
-        }
-
-        .slide li {
-            margin-bottom: 15px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .slide li::before {
-            content: '▶';
-            color: #00ff88;
-            position: absolute;
-             left: -10px; 
-        }
-
-        .logo {
-            position: absolute;
-            bottom: 40px;
-            left: 80%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-
-        .logo svg {
-            width: 60px;
-            height: 60px;
-            fill: #00ff88;
-        }
-
-        .navigation {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            gap: 15px;
-            z-index: 100;
-        }
-
-        .nav-btn {
-            background: rgba(0, 255, 136, 0.2);
-            border: 2px solid #00ff88;
-            color: #00ff88;
-            padding: 12px 24px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-btn:hover {
-            background: #00ff88;
-            color: #0f2027;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
-        }
-
-        .nav-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .slide-counter {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            color: #00ff88;
-            font-size: 18px;
-            font-weight: 600;
-            z-index: 100;
-        }
-
-        @media (max-width: 768px) {
-            .slide {
-                padding: 40px 20px;
-            }
-            
-            .slide h1 {
-                font-size: 2.5rem;
-            }
-            
-            .slide h2 {
-                font-size: 2rem;
-            }
-            
-            .slide p {
-                font-size: 1.2rem;
-            }
-            
-            .navigation {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-</style>
