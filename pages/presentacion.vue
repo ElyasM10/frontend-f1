@@ -278,30 +278,49 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="presentation-container">
-    <div
-      v-for="(slide, index) in slides"
-      :key="index"
-      class="slide"
-      :class="{ active: index === currentSlide }"
-    >
-      <div class="breadcrumb">{{ slide.breadcrumb }}</div>
-      <h2>{{ slide.title }}</h2>
-      <div v-html="slide.content" />
-      <div v-if="slide.logo" class="logo">
-        <svg viewBox="0 0 100 100">
-          <polygon points="50,20 80,70 20,70" fill="#00ff88" />
-        </svg>
+  <div class="app-wrapper">
+    <div class="presentation-container">
+      <div
+        v-for="(slide, index) in slides"
+        :key="index"
+        class="slide"
+        :class="{ active: index === currentSlide }"
+      >
+        <div class="breadcrumb">{{ slide.breadcrumb }}</div>
+        <h2>{{ slide.title }}</h2>
+        <div v-html="slide.content" />
+        <div v-if="slide.logo" class="logo">
+          <svg viewBox="0 0 100 100">
+            <polygon points="50,20 80,70 20,70" fill="#00ff88" />
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="slide-counter">
-    <span>{{ currentSlide + 1 }}</span> / <span>{{ totalSlides }}</span>
-  </div>
+    <div class="slide-counter">
+      <span>{{ currentSlide + 1 }}</span> / <span>{{ totalSlides }}</span>
+    </div>
 
-  <div class="navigation">
-    <button class="nav-btn" @click="previousSlide">← Anterior</button>
-    <button class="nav-btn" @click="nextSlide">Siguiente →</button>
+    <div class="navigation">
+      <button class="nav-btn" @click="previousSlide">← Anterior</button>
+      <button class="nav-btn" @click="nextSlide">Siguiente →</button>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.app-wrapper {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, 
+    #00dc82 0%, 
+    #020420 50%, 
+    #020420 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 50px;  /* Espacio desde arriba */
+  overflow-x: hidden;
+}
+</style>

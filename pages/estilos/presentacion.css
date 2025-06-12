@@ -4,20 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-font-family: 'Arial', sans-serif;
-background: linear-gradient(135deg, 
-#00dc82 0%, 
-#020420 50%,   /* azul oscuro ocupa hasta 80% */
-#020420 100%   /* verde brillante solo en el 20% final */
-);
-min-height: 100vh;
-display: block;
-justify-content: center;
-align-items: flex-start; /* Cambiado de center a flex-start */
-padding-top: 50px;        /* Espacio desde arriba */
-overflow-x: hidden;
-}
 .presentation-container {
 width: 100%;
 max-width: 1600px;
